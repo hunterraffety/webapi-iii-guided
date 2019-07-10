@@ -40,6 +40,10 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+function validateHubsId(id) {
+  //
+}
+
 router.post('/', async (req, res) => {
   try {
     const hub = await Hubs.add(req.body);

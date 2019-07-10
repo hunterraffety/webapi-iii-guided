@@ -44,4 +44,13 @@ server.get('/', addName, (req, res) => {
     `);
 });
 
+server.use(errorHandler);
+
+function errorHandler(error, req, res, next) {
+  console.log(error);
+  res.status(error).json({ you: 'shall not pass' });
+}
+
+// mw > mw > mw > mw > eh > mw > mw > eh > mw > mw > eh
+
 module.exports = server;

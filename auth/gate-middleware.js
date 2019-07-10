@@ -6,6 +6,6 @@ function gate(req, res, next) {
   if (password && password === 'open') {
     next();
   } else {
-    res.status(401).json({ you: 'Shall not pass!' });
+    next(401); // go to next errorHandler
   }
 }
